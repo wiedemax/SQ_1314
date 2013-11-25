@@ -1,0 +1,14 @@
+package fuchimi;
+
+public class FuchimiGame 
+{
+	public static void main (String[] args)
+	{
+		System.out.println("Welcome to FuChiMi!");
+		
+		Hand hand1 = new Rock();
+		Hand hand2 = new Paper();
+		
+		System.out.println(hand2.beats(hand2));
+	}
+}

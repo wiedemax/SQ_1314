@@ -1,0 +1,25 @@
+package fuchimi;
+
+public class Shotgun extends Hand {
+
+	@Override
+	public boolean beats(Hand hand) {
+		return hand.loseAgainst(this);
+	}
+
+	@Override
+	protected boolean loseAgainst(Rock rock) {
+		return true;
+	}
+
+	@Override
+	protected boolean loseAgainst(Paper paper) {
+		return false;
+	}
+
+	@Override
+	protected boolean loseAgainst(Shotgun shotgun) {
+		return false;
+	}
+
+}
