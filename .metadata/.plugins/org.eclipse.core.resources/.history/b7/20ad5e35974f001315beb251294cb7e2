@@ -1,0 +1,21 @@
+public class EmployedStudent extends Student implements Employable{
+	private Employable _employee;
+	
+	public EmployedStudent(Employable employee)
+	{
+		_employee = employee;
+	}
+	
+	public int getUnNumber() {
+		return _student.getUnNumber();
+	}
+	public void setUnNumber(int unNumber) {
+		_student.setUnNumber(unNumber);
+	}
+	public float getSalary() {
+		return _employee.getSalary();
+	}
+	public void setSalary(float salary) {
+		_employee.setSalary(salary);
+	}
+}

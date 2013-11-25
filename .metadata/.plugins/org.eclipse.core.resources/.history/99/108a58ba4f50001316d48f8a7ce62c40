@@ -1,0 +1,10 @@
+public interface EmployedStudentInterface
+{
+	public int getUnNumber();
+	
+	public void setUnNumber(int unNumber);
+	
+	public float getSalary();
+	
+	public void setSalary(float salary);
+}
