@@ -12,12 +12,16 @@ public class EmployedStudent extends Student implements Employable
 	public int getUnNumber() {
 		return super.getUnNumber();
 	}
+	
 	public void setUnNumber(int unNumber) {
 		super.setUnNumber(unNumber);
+		
 	}
+	
 	public float getSalary() {
 		return _employee.getSalary();
 	}
+	
 	public void setSalary(float salary) {
 		_employee.setSalary(salary);
 	}

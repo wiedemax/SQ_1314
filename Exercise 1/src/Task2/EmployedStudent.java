@@ -15,7 +15,6 @@ public class EmployedStudent extends Student implements Employable
 	
 	public void setUnNumber(int unNumber) {
 		super.setUnNumber(unNumber);
-		
 	}
 	
 	public float getSalary() {

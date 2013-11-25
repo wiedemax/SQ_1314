@@ -1,6 +1,0 @@
-public interface EmployeeInterface 
-{
-	public float getSalary();
-	
-	public void setSalary(float salary);
-}
