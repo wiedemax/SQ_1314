@@ -10,7 +10,6 @@ public class Paper extends Hand{
 	@Override
 	protected Boolean loseAgainst(Rock rock) {
 		return new Boolean("false");
-		
 	}
 
 	@Override
