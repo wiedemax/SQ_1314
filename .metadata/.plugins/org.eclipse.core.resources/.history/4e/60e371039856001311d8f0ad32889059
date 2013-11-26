@@ -1,6 +1,5 @@
 package tests;
 
-import fuchimi.FuchimiGame;
 import fuchimi.Hand;
 import fuchimi.Paper;
 import fuchimi.Rock;
@@ -10,8 +9,6 @@ public class FuchimiGameRulesTest
 {
 	public static void main(String[] args)
 	{
-		FuchimiGame.main(args);
-		
 		Hand hand1 = new Rock();
 		Hand hand2 = new Paper();
 		Hand hand3 = new Shotgun();
