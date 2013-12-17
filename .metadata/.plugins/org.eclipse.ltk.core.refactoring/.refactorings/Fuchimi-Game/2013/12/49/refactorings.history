@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Fuchimi-Game/src/fuchimi/FuChiMi.uxf&apos; to &apos;Fuchimi.uxf&apos;" description="Rename resource &apos;FuChiMi.uxf&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/fuchimi/FuChiMi.uxf" name="Fuchimi.uxf" stamp="1386021122625" updateReferences="true"/>
+</session>

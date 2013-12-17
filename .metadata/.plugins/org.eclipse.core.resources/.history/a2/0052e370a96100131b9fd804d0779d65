@@ -1,0 +1,142 @@
+package tests;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.util.Random;
+import java.util.Scanner;
+
+import fuchimi.FuchimiGame;
+import fuchimi.Hand;
+import fuchimi.Paper;
+import fuchimi.Rock;
+import fuchimi.Shotgun;
+
+public class FuchimiGameRulesTest
+{
+	static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+	public static void main(String[] args) throws IOException
+	{	
+		FuchimiGame.main(args);
+
+		menu();
+
+		/*Hand hand1 = new Rock();
+		Hand hand2 = new Paper();
+		Hand hand3 = new Shotgun();
+
+		System.out.println(hand1 + " beats " + hand1 + "? " + hand1.beats(hand1));
+		System.out.println(hand1 + " beats " + hand2 + "? " + hand1.beats(hand2));
+		System.out.println(hand1 + " beats " + hand3 + "? " + hand1.beats(hand3));
+		System.out.println(hand2 + " beats " + hand1 + "? " + hand2.beats(hand1));
+		System.out.println(hand2 + " beats " + hand2 + "? " + hand2.beats(hand2));
+		System.out.println(hand2 + " beats " + hand3 + "? " + hand2.beats(hand3));
+		System.out.println(hand3 + " beats " + hand1 + "? " + hand3.beats(hand1));
+		System.out.println(hand3 + " beats " + hand2 + "? " + hand3.beats(hand2));
+		System.out.println(hand3 + " beats " + hand3 + "? " + hand3.beats(hand3));*/
+	}
+
+	private static void menu() throws IOException
+	{
+		String line;
+		Hand playerHand = null;
+		Hand cpuHand;
+
+
+		System.out.println("Please choose a Hand.");
+		System.out.println("1: Rock\n"
+				+ "2: Paper\n"
+				+ "3: Shotgun\n");
+		System.out.println("0: Quit Game");
+
+		//		if(reader.readLine())
+		//		{
+		//			System.out.println("No valid choice. Only numbers are allowed.");
+		//			
+		//			input = new Scanner(System.in);
+		//			menu(input);
+		//		}		
+
+		while((line = reader.readLine()) != null && !(line.equals("0")))
+		{
+			if(handPick(line) == null)
+			{
+				System.out.println("No valid choice, try again :)");
+
+				System.out.println("Please choose a Hand.");
+				System.out.println("1: Rock\n"
+						+ "2: Paper\n"
+						+ "3: Shotgun\n");
+				System.out.println("0: Quit Game");
+				
+				continue;
+			}
+			else
+			{
+				playerHand = handPick(line);
+				System.out.println("Your Choice: " + playerHand);
+			}
+
+			cpuHand = randomHand();
+			System.out.println("Computer's Choice: " + cpuHand);
+
+			winner(playerHand, cpuHand);
+		}
+	}
+
+	private static Hand handPick(String choice)
+	{
+		if(choice.length() == 1)
+		{
+			switch(choice)
+			{
+			case "1": return new Rock();
+			case "2": return new Paper();
+			case "3": return new Shotgun();
+			default: return null;
+			}
+		}
+		else
+			return null;
+	}
+
+	private static void winner(Hand playerHand, Hand cpuHand) throws IOException
+	{
+		if(playerHand != null)
+		{
+			if(playerHand.beats(cpuHand) == null)
+			{
+				System.out.println("DRAW");
+			}
+			else if(playerHand.beats(cpuHand))
+			{
+				System.out.println("YOU WIN!");
+			}
+			else
+			{
+				System.out.println("YOU LOSE!");
+			}
+		}
+		menu();
+	}
+
+	private static Hand randomHand()
+	{
+		// Usually this can be a field rather than a method variable
+		Random rand = new Random();
+
+		// nextInt is normally exclusive of the top value,
+		// so add 1 to make it inclusive
+		int randomNum = rand.nextInt(3);
+
+		switch(randomNum)
+		{
+		case 0: return new Rock();
+		case 1: return new Paper();
+		case 2: return new Shotgun();
+		default: return randomHand();
+		}
+	}
+}

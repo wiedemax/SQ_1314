@@ -1,7 +1,7 @@
 package fuchimi;
 
 public class Paper extends Hand{
-
+	
 	@Override
 	public Boolean beats(Hand hand) {
 		return hand.loseAgainst(this);
